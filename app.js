@@ -7,7 +7,10 @@ btnTranslate.addEventListener("click", clickEventHandler)
 var serverURL = "https://api.funtranslations.com/translate/minion.json"
 
 function getTranslationUrl(input) {
-    return serverURL + "?" + "text=" + input
+    var url = serverURL + "?" + "text=" + input;
+    var encodedUrl = encodeURI(url);
+    console.log(encodedUrl);
+    return encodedUrl;
 }
 
 function errorHandler(error) {
